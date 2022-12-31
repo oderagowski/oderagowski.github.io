@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/portfolio.js" defer></script>
     <title>Owen Deragowski</title>
 </head>
 
@@ -16,9 +17,10 @@
     <!-- Navbar -->
     <div class="Navbar">
         <a class="active" href="#Home">Home</a>
+        <a href="#Slideshow">Slideshow</a>
         <a href="#About">About Me</a>
         <a href="#GitHub">GitHub</a>
-        <a href="#About">Contact</a>
+        <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
     </div>
 
     <br>
@@ -31,7 +33,6 @@
         <source src="./img/intro.mp4" type="video/mp4">
         Your browser does not support HTML video.
         </video>
-
     </div>
 
 
@@ -44,10 +45,70 @@
                 <br>
                 <br>
                 Thank you for stopping by and enjoy!
-
             </p>
         </strong>
     </div>
+
+
+    <!-- Slideshow Section -->
+    <div id="slideshow">
+        <div id="Slideshow_Background">
+            <div id="Slideshow_Container">
+                <!-- Slide 1 of 6 -->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./img/coming-soon-2070393_1280.png" alt="Picture of Yourself">
+                        <div class="text">I'm available to assist you on your project!</div>
+                </div>
+
+                <!-- Slide 2 of 6 -->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./img/HTMLCSSJS.png" alt="HTML, CSS, and JS Logos">
+                    <div class="text">I am a full-stack software developer, <br> trained in: <br> HTML, CSS, JavaScript, </div>
+                </div>
+
+                <!-- Slide 3 of 6 -->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./img/python.png" alt="Python Logo">
+                    <div class="text">the popular programming language Python, </div>
+                </div>
+
+                <!-- Slide 4 of 6 -->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./img/C_Sharp_and_Dot_NET.png" alt="C# Logo">
+                    <div class="text">C#, .NET Framework, ASP.NET, MVC, </div>
+                </div>
+
+                <!-- Slide 5 of 6 -->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./img/SQL.jpg" alt="SQL Logo">
+                    <div class="text">back-end development, databases, and SQL.</div>
+                </div>
+
+                <!-- Slide 6 of 6 -->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./img/CONTACT.png" alt="Contact">
+                    <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                </div>
+
+                <!-- Previous and Next Buttons -->
+                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>   
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>     
+            </div>
+            <br>
+
+            <!-- Slideshow Dots -->
+            <div class="dotcont">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </div>
+     </div>
+
+
 
     <!-- About Section -->
     <div class="Row" id="About">
@@ -87,45 +148,43 @@
         <!-- Right Column -->
         <div class="Column_2">
             <a href="https://github.com/oderagowski" target="_blank"><img src="./img/github.png" alt="GitHub Logo"></a>
+        </div>
+    </div>
 
-        
 
+
+    <!-- Contact Form -->
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/f/xbjeropo" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name"><b>Name</b></label>
+                        <input type="text" placeholder="Type your name here" name="name" required>
+                    
+                    <label for="phone"><b>Phone</b></label>
+                        <input type="text" placeholder="Type your phone number here" name="phone" required>
+                    
+                    <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Type your email address here" name="emaile" required>
+                    
+                     <label for="message"><b>Message</b></label>
+                        <input type="text" placeholder="Type your message here" name="message" required>
+
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btncancel" onclick="closeForm()">CLOSE</button>
+                </form>
+            </div>
         </div>
 
-    </div>
 
 
-    <!-- Contact Section -->
-    <div class="Row" id="Contact">
-        <!-- Left Column: Contact Image -->
-        <div class="Column_2 Column_tall">
-            <img src="img/email.png" alt="Email Envelope">
-        </div>
-     
 
-        <!-- Right Column: Contact Form -->
-    <div class="Column_1 Column_tall">
-        <h1>Contact</h1>
-        <form action="" method="POST">
-
-            <label>Name:</label>
-                <input type="text" placeholder="Please enter your name here">
-            <label>Email:</label>
-                <input type="text" placeholder="Please enter your email here">
-            <label>Message:</label>
-                <input type="text" placeholder="Please write your message here">
-                <input type="submit" value="SUBMIT">
-        </form>
-    </div>
-    </div>
     
     <!-- Footer Section -->
         <footer>
-            <p>
                 <p class="center">&copy Owen Deragowski</p>
                 <br>
-            </p>
-        </footer>
-               
+        </footer>              
     </body>
 </html>
